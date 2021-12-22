@@ -1,0 +1,17 @@
+me\harpylmao\eustaquio\managers\user\UserManager.class
+me\harpylmao\eustaquio\managers\repository\ObjectRepository.class
+me\harpylmao\eustaquio\Bot.class
+me\harpylmao\eustaquio\managers\model\Model.class
+me\ryzeon\command\defaults\DefaultHelpCommand.class
+me\ryzeon\command\interfaces\BaseCommand.class
+me\harpylmao\eustaquio\Config.class
+me\harpylmao\eustaquio\managers\mongo\MongoConnector.class
+me\ryzeon\command\objects\CommandPreConstructor.class
+me\ryzeon\command\objects\CommandEvent.class
+me\ryzeon\command\handler\CommandHandler.class
+me\harpylmao\eustaquio\managers\user\User.class
+me\ryzeon\command\CommandManager.class
+me\ryzeon\command\objects\Category.class
+me\harpylmao\eustaquio\commands\PingCommand.class
+me\harpylmao\eustaquio\listeners\MemberJoinListener.class
+me\harpylmao\eustaquio\managers\repository\MongoRepositoryModel.class
