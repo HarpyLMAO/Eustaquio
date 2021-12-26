@@ -133,10 +133,10 @@ public class TrackScheduler extends AudioEventAdapter {
 		if (this.loopQueue && !this.loop) toggleLoopQueue(event);
 		if (!this.loop) {
 			this.loop = true;
-			if (channel != null) event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loop Enabled!").build()).queue();
+			if (channel != null) event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loop Enabled!").build()).queue();
 		} else {
 			this.loop = false;
-			if (channel != null) event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loop Disabled!").build()).queue();
+			if (channel != null) event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loop Disabled!").build()).queue();
 		}
 	}
 
@@ -151,10 +151,10 @@ public class TrackScheduler extends AudioEventAdapter {
 		if (this.loop && !this.loopQueue) toggleLoop(event);
 		if (!this.loopQueue) {
 			this.loopQueue = true;
-			if (channel != null) event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":repeat: Loop Queue Enabled!").build()).queue();
+			if (channel != null) event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":repeat: Loop Queue Enabled!").build()).queue();
 		} else {
 			this.loopQueue = false;
-			if (channel != null) event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":x: Loop Queue Disabled!").build()).queue();
+			if (channel != null) event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":x: Loop Queue Disabled!").build()).queue();
 		}
 
 	}

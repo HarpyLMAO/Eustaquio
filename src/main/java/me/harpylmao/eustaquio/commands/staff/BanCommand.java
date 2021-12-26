@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.exceptions.HierarchyException;
 
 public class BanCommand implements BaseCommand {
@@ -20,7 +21,7 @@ public class BanCommand implements BaseCommand {
             embedBuilder.setColor(eustaquio.getColorColored());
             embedBuilder.setTitle("Who you want ban 😈.");
             embedBuilder.setImage("https://c.tenor.com/7EYsZ1IF23YAAAAC/thor-avengers.gif");
-            command.getChannel().sendMessage(embedBuilder.build()).queue();
+            command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
         } else {
             String id = args[0];
             if (!id.startsWith("<@!")) {
@@ -39,7 +40,7 @@ public class BanCommand implements BaseCommand {
                         embedBuilder.setColor(eustaquio.getColorColored());
                         embedBuilder.setTitle(cachedMember.getUser().getName() + " has been banned from the server 😈.");
                         embedBuilder.setImage("https://c.tenor.com/k0jaPE9KtNsAAAAM/almighty-thunder.gif");
-                        command.getChannel().sendMessage(embedBuilder.build()).queue();
+                        command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
                     } catch (HierarchyException exception) {
                         command.reply("Can't modify a member with higher or equal highest role than yourself!");
                         exception.printStackTrace();

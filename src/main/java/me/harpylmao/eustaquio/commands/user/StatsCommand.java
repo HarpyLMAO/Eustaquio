@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class StatsCommand implements BaseCommand {
             embedBuilder.setThumbnail(member.getUser().getEffectiveAvatarUrl());
             embedBuilder.addField("Level", "" + userMember.getLevel() + " (" + userMember.getExperience() + "%)", true);
             embedBuilder.addField("Groups", "" + getUserGroups(member), true);
-            textChannel.sendMessage(embedBuilder.build()).queue();
+            textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         } else if (args.length == 1) {
             String id = args[0];
             if (NumberUtils.isParsable(id)) {
@@ -46,13 +47,13 @@ public class StatsCommand implements BaseCommand {
                 embedBuilder2.setThumbnail(discordUser.getEffectiveAvatarUrl());
                 embedBuilder2.addField("Level", "" + user.getLevel() + " (" + user.getExperience() + "%)", true);
                 embedBuilder2.addField("Groups", "" + getUserGroups(command.getGuild().getMember(discordUser)), true);
-                textChannel.sendMessage(embedBuilder2.build()).queue();
+                textChannel.sendMessageEmbeds(embedBuilder2.build()).queue();
             } else {
                 EmbedBuilder therockEmbed = new EmbedBuilder();
                 therockEmbed.setColor(eustaquio.getColorColored());
                 therockEmbed.setTitle("Are you idiot?");
                 therockEmbed.setImage("https://c.tenor.com/ZX95mDnlodwAAAAM/the-rock-sus-eye.gif");
-                command.getMessage().reply(therockEmbed.build()).queue();
+                command.getMessage().replyEmbeds(therockEmbed.build()).queue();
                 return;
             }
         }

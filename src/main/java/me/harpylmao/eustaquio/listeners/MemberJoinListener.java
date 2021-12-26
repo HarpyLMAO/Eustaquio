@@ -55,7 +55,7 @@ public class MemberJoinListener extends ListenerAdapter {
             embedBuilder.setThumbnail("https://c.tenor.com/nz2nnGCEYH8AAAAj/micacalala-michi.gif");
             embedBuilder.setImage("https://images-ext-1.discordapp.net/external/5Fj3BcsqGou6oCvI3323XF0nqvO704yMPcXPArm1MPw/https/media.discordapp.net/attachments/818946669319290890/834251907781492776/line_divider_2.jpg");
             embedBuilder.setFooter("\u200E" + Configuration.TIMESTAMP.format(new Date()));
-            event.getGuild().getTextChannelById(eustaquio.getWelcomeChannel()).sendMessage(embedBuilder.build()).queue();
+            event.getGuild().getTextChannelById(eustaquio.getWelcomeChannel()).sendMessageEmbeds(embedBuilder.build()).queue();
         }
     }
 
@@ -71,7 +71,7 @@ public class MemberJoinListener extends ListenerAdapter {
                             "Si necesitas ayuda con cualquier cosa puedes crear un ticket en #asdf" +
                             "");
             embedBuilder.setImage("https://pm1.narvii.com/6354/ddb4ee8f0a5cd819812fa83274a9234eb9224b29_hq.jpg");
-            event.getJDA().getTextChannelById(eustaquio.getWelcomeChannel()).sendMessage(embedBuilder.build()).queue();
+            event.getJDA().getTextChannelById(eustaquio.getWelcomeChannel()).sendMessageEmbeds(embedBuilder.build()).queue();
         }
     }*/
 }

@@ -20,13 +20,13 @@ public class QueueCommand implements BaseCommand {
 
         if (musicManager.getGuildAudio(event.getGuild()).getTrackScheduler().getTrackQueue().size() == 0) {
             embed.setDescription("There's no song in the queue for me to play. **/play** a song first.");
-            textChannel.sendMessage(embed.build()).queue();
+            textChannel.sendMessageEmbeds(embed.build()).queue();
             return;
         }
         List<AudioTrack> tracks = musicManager.getGuildAudio(event.getGuild()).getTrackScheduler().getTrackQueue();
         if (tracks.size() == 0 || tracks.get(0) == null) {
             embed.setDescription("There's no song in the queue for me to play. **/play** a song first.");
-            textChannel.sendMessage(embed.build()).queue();
+            textChannel.sendMessageEmbeds(embed.build()).queue();
             return;
         }
 
@@ -68,7 +68,7 @@ public class QueueCommand implements BaseCommand {
         embed.setTitle("Music Queue");
         embed.setDescription(description);
 
-        textChannel.sendMessage(embed.build()).queue();
+        textChannel.sendMessageEmbeds(embed.build()).queue();
         return;
     }
 

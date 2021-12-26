@@ -56,5 +56,10 @@
       <option name="name" value="ryzeon-repo" />
       <option name="url" value="http://repo.ryzeon.me/repository/ryzeon" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="chew-m2" />
+      <option name="name" value="chew-m2" />
+      <option name="url" value="https://m2.chew.pro/releases" />
+    </remote-repository>
   </component>
 </project>

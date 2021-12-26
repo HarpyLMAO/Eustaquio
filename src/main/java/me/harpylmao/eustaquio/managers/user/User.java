@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import me.harpylmao.eustaquio.managers.Eustaquio;
+import me.harpylmao.eustaquio.managers.car.Car;
 import me.harpylmao.eustaquio.managers.model.Model;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -11,6 +12,8 @@ import net.dv8tion.jda.api.entities.TextChannel;
 
 import java.awt.*;
 import java.beans.ConstructorProperties;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by HarpyLMAO
@@ -27,8 +30,11 @@ public class User implements Model {
 
   private boolean staff;
 
+  private List<Car> cars = new ArrayList<>();
+
   private int level;
   private int experience;
+  private int balance;
 
   public User(String id, String name) {
     this.id = id;
@@ -39,20 +45,26 @@ public class User implements Model {
           "id",
           "name",
           "staff",
+          "cars",
           "level",
-          "experience"
+          "experience",
+          "balance"
   })
   public User(
           String id,
           String name,
           boolean staff,
+          List<Car> cars,
           int level,
-          int experience
+          int experience,
+          int balance
   ) {
     this(id, name);
     this.staff = staff;
+    this.cars = cars;
     this.level = level;
     this.experience = experience;
+    this.balance = balance;
   }
 
   @Override
@@ -67,6 +79,6 @@ public class User implements Model {
     embedBuilder.setDescription("Felicidades has subido de rango maricón.");
     embedBuilder.setThumbnail(discordUser.getEffectiveAvatarUrl());
     channel.sendMessage(discordUser.getAsMention()).queue();
-    channel.sendMessage(embedBuilder.build()).queue();
+    channel.sendMessageEmbeds(embedBuilder.build()).queue();
   }
 }

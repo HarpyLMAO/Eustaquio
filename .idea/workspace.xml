@@ -5,78 +5,86 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e25d3b-798b-489d-ae9b-059c6e3d72f6" name="Changes" comment="a">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/AudioSendProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/MusicManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/TrackScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/factories/SearchFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/guild/GuildMusicManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/handlers/AudioSoundLoadHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/objects/RequestType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/objects/SpotifyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/objects/YoutubeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/sources/SpotifySource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/DefaultCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/AdminCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/LevelCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/WelcomeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/defaults/DefaultHelpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/handler/CommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/interfaces/BaseCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/objects/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/objects/CommandEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/objects/CommandPreConstructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BackCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BassBoostCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ClearCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LeaveCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LoopCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/NPCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PauseCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PlayCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/QueueCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ResumeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SeekCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ShuffleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SkipCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/VolumeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/BanCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/KickCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/MuteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnbanCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnmuteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/ChatListeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/MemberJoinListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/MusicListeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/ReadyListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/Eustaquio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/EustaquioManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/events/EustaquioEventListeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/events/UserRankupEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/mongo/MongoConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/repository/MongoRepositoryModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/repository/ObjectRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/user/UserManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/utils/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/utils/MusicUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/utils/NumberUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/races/RaceCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/SelectionMenuListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/car/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/car/CarManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/car/race/Race.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/utils/TicketFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/CommandManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/Listener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/command/CommandContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/command/ICommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/command/commands/HelpCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/command/commands/PingCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/MusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/TrackScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/handlers/AudioSoundLoadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio/handlers/AudioSoundLoadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/DefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/DefaultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/AdminCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/AdminCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/LevelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/LevelCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/WelcomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/admin/WelcomeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/defaults/DefaultHelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/defaults/DefaultHelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/handler/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/handler/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BackCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BackCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BassBoostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/BassBoostCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LeaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LoopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/LoopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/NPCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/NPCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PauseCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PauseCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PlayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/PlayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/QueueCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/QueueCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ResumeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ResumeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SeekCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SeekCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/ShuffleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SkipCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/SkipCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/VolumeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/music/VolumeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/BanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/BanCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/KickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/KickCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/MuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/MuteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnbanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnbanCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnmuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/staff/UnmuteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/user/StatsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/user/StatsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/user/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/user/UserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/ChatListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/ChatListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/MemberJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/listeners/MemberJoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/Eustaquio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/Eustaquio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/managers/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/MusicManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/TrackScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/TrackScheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/handlers/AudioSoundLoadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/audio/handlers/AudioSoundLoadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/DefaultCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/DefaultCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/AdminCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/AdminCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/LevelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/LevelCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/WelcomeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/admin/WelcomeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/command/defaults/DefaultHelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/command/defaults/DefaultHelpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/command/handler/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/command/handler/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/BackCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/BackCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/BassBoostCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/BassBoostCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ClearCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ClearCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/LeaveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/LeaveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/LoopCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/LoopCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/NPCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/NPCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/PauseCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/PauseCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/PlayCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/PlayCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/QueueCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/QueueCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ResumeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ResumeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/SeekCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/SeekCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ShuffleCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/ShuffleCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/SkipCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/SkipCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/VolumeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/music/VolumeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/BanCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/BanCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/KickCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/KickCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/MuteCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/MuteCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/UnbanCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/UnbanCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/UnmuteCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/staff/UnmuteCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/user/StatsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/user/StatsCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/user/UserCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/commands/user/UserCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/listeners/ChatListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/listeners/ChatListeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/listeners/MemberJoinListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/listeners/MemberJoinListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/managers/Eustaquio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/managers/Eustaquio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/managers/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/harpylmao/eustaquio/managers/user/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +95,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-17.0.1/lib/src.zip!/java.base/java/io/File.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,19 +130,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/audio" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/me/harpylmao/eustaquio/commands/command/commands2" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.harpylmao.eustaquio.managers.car" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jordi\Programming 2\Eustaquio\src\main\java\me\harpylmao\eustaquio\commands\command\commands2" />
+      <recent name="C:\Users\jordi\Programming 2\Eustaquio" />
       <recent name="C:\Users\jordi\IdeaProjects\Eugenio\src\main\java\me\harpylmao\eustaquio\audio" />
       <recent name="C:\Users\jordi\IdeaProjects\Eugenio\src\main\java\me\harpylmao\eustaquio\utils" />
       <recent name="C:\Users\jordi\IdeaProjects\Eugenio\src\main\java\me\harpylmao\eustaquio" />
-      <recent name="C:\Users\jordi\IdeaProjects\Eugenio\src\main\java" />
-      <recent name="C:\Users\jordi\IdeaProjects\Eugenio\src\main\java\me\harpylmao\eustaquio\managers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jordi\IdeaProjects\Eugenio" />
@@ -137,7 +160,7 @@
   <component name="RunManager" selected="Application.Bot">
     <configuration name="Bot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.harpylmao.eustaquio.Bot" />
-      <module name="Eugenio" />
+      <module name="Eustaquio" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="me.duncte123.jdatuts.*" />
@@ -188,8 +211,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Eugenio" />
       <item itemvalue="Application.Bot" />
+      <item itemvalue="Application.Eugenio" />
       <item itemvalue="Maven.Eugenio [clean,install]" />
     </list>
     <recent_temporary>
@@ -218,6 +241,9 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:javax.persistence:javax.persistence-api" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -232,5 +258,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a" />
     <option name="LAST_COMMIT_MESSAGE" value="a" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

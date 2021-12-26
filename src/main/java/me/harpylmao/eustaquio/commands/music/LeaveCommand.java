@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 public class LeaveCommand implements BaseCommand {
 
@@ -16,12 +17,12 @@ public class LeaveCommand implements BaseCommand {
                 (event.getMember().getVoiceState() == null) ||
                 !event.getMember().getVoiceState().inVoiceChannel() ||
                 (event.getMember().getVoiceState().getChannel() == null)) {
-            textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("You are not in a voice channel!").build()).queue();
+            textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("You are not in a voice channel!").build()).queue();
             return;
         }
 
         Bot.getInstance().getGuildAudioManager().leaveVoiceChannel(event.getGuild());
-        textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Left voice channel!").build()).queue();
+        textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Left voice channel!").build()).queue();
     }
 
     @Override

@@ -128,7 +128,7 @@ public class MusicManager {
 		Member member = event.getMember();
 
 		if (member == null || member.getVoiceState() == null || !member.getVoiceState().inVoiceChannel() || member.getVoiceState().getChannel() == null) {
-			event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Please connect to a voice channel first!").build()).queue();
+			event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Please connect to a voice channel first!").build()).queue();
 			return;
 		}
 
@@ -140,19 +140,19 @@ public class MusicManager {
 		String finalTrackURL = new SearchFactory(trackURL, event , trackScheduler, playerManager, eustaquio).search();
 
 		if (finalTrackURL == null) {
-			event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("An error occurred!").build()).queue();
+			event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("An error occurred!").build()).queue();
 			return;
 		}
 
 		/* Spotify Playlist */
 		if (finalTrackURL.startsWith("Spotify.PLAYLIST ")) {
-			event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading playlist `" + finalTrackURL.replace("Spotify.PLAYLIST ","") + "`").build()).queue();
+			event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading playlist `" + finalTrackURL.replace("Spotify.PLAYLIST ","") + "`").build()).queue();
 			return;
 		}
 
 		/* Spotify Album */
 		if (finalTrackURL.startsWith("Spotify.ALBUM ")) {
-			event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading album `" + finalTrackURL.replace("Spotify.ALBUM ","") + "`").build()).queue();
+			event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading album `" + finalTrackURL.replace("Spotify.ALBUM ","") + "`").build()).queue();
 			return;
 		}
 		playerManager.loadItem(finalTrackURL, new AudioSoundLoadHandler(this.logger, member, event, sendMessage, trackScheduler, finalTrackURL));

@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 public class BassBoostCommand implements BaseCommand {
 
@@ -23,7 +24,7 @@ public class BassBoostCommand implements BaseCommand {
         }
 
         if (musicManager.getGuildAudio(event.getGuild()).getTrackScheduler().getTrackQueue().size() == 0) {
-            textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("There are no songs playing.").build()).queue();
+            textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("There are no songs playing.").build()).queue();
             return;
         }
 
@@ -31,12 +32,12 @@ public class BassBoostCommand implements BaseCommand {
 
         if (Integer.parseInt(input) == 50|| Integer.parseInt(input) == 0) {
             musicManager.getGuildAudio(event.getGuild()).getAudioPlayer().setFilterFactory(null);
-            textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Bassboost has been disabled.").build()).queue();
+            textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Bassboost has been disabled.").build()).queue();
             return;
         }
 
         if (Integer.parseInt(input) >= 401 || Integer.parseInt(input) <= -1) {
-            textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("The bassboost is out of range! [0-500]").build()).queue();
+            textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("The bassboost is out of range! [0-500]").build()).queue();
             return;
         }
 
@@ -50,7 +51,7 @@ public class BassBoostCommand implements BaseCommand {
 
         musicManager.getGuildAudio(event.getGuild()).getAudioPlayer().setFilterFactory(equalizer);
 
-        textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Bassboost has been applied, at the level " + input + "%.").build()).queue();
+        textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Bassboost has been applied, at the level " + input + "%.").build()).queue();
     }
 
     @Override

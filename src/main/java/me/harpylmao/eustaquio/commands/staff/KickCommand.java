@@ -26,7 +26,7 @@ public class KickCommand implements BaseCommand {
             embedBuilder.setColor(eustaquio.getColorColored());
             embedBuilder.setTitle("Who you want kick 😈.");
             embedBuilder.setImage("https://c.tenor.com/7EYsZ1IF23YAAAAC/thor-avengers.gif");
-            command.getChannel().sendMessage(embedBuilder.build()).queue();
+            command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
         } else {
             String id = args[0].replace("<@!", "").replace(">", "");
 
@@ -39,7 +39,7 @@ public class KickCommand implements BaseCommand {
                     embedBuilder.setColor(eustaquio.getColorColored());
                     embedBuilder.setTitle(cachedMember.getUser().getName() + " has been kicked from the server 😈.");
                     embedBuilder.setImage("https://c.tenor.com/k0jaPE9KtNsAAAAM/almighty-thunder.gif");
-                    command.getChannel().sendMessage(embedBuilder.build()).queue();
+                    command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                     return;

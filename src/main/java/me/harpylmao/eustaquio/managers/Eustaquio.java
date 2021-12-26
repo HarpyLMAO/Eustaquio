@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.harpylmao.eustaquio.Bot;
 import me.harpylmao.eustaquio.managers.model.Model;
+import net.dv8tion.jda.api.entities.Message;
 
 import java.awt.*;
 import java.beans.ConstructorProperties;
@@ -26,6 +27,7 @@ public class Eustaquio implements Model {
     private String ticketMessageId;
     private String ticketChannelId;
     private String ticketCategoryId;
+    private String ticketLogsChannelId;
     private List<String> ticketCloseMessageIds = new ArrayList<>();
 
     private String verifyMessageId;
@@ -52,6 +54,7 @@ public class Eustaquio implements Model {
             "ticketMessageId",
             "ticketChannelId",
             "ticketCategoryId",
+            "ticketLogsChannelId",
             "ticketCloseMessageIds"
     })
     public Eustaquio(
@@ -67,6 +70,7 @@ public class Eustaquio implements Model {
             String ticketMessageId,
             String ticketChannelId,
             String ticketCategoryId,
+            String ticketLogsChannelId,
             List<String> ticketCloseMessageIds
     ) {
         this(id);
@@ -81,6 +85,7 @@ public class Eustaquio implements Model {
         this.ticketMessageId = ticketMessageId;
         this.ticketChannelId = ticketChannelId;
         this.ticketCategoryId = ticketCategoryId;
+        this.ticketLogsChannelId = ticketLogsChannelId;
         this.ticketCloseMessageIds = ticketCloseMessageIds;
     }
 

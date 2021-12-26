@@ -42,14 +42,14 @@ public class AudioSoundLoadHandler implements AudioLoadResultHandler {
 					.setThumbnail(MusicUtils.getThumbnail(audioTrack));
 
 			if (sendMessage) {
-				event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":white_check_mark: **" + audioTrack.getInfo().title + "** successfully added to the queue!").build()).queue();
-				event.getChannel().sendMessage(embed.build()).queue();
+				event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":white_check_mark: **" + audioTrack.getInfo().title + "** successfully added to the queue!").build()).queue();
+				event.getChannel().sendMessageEmbeds(embed.build()).queue();
 			}
 
 		} else {
 
 			if (sendMessage) {
-				event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Song added to queue.").build()).queue();
+				event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Song added to queue.").build()).queue();
 			}
 
 		}
@@ -79,10 +79,10 @@ public class AudioSoundLoadHandler implements AudioLoadResultHandler {
 							.setFooter("Added by " + member.getUser().getAsTag(), member.getUser().getEffectiveAvatarUrl())
 							.setThumbnail(MusicUtils.getThumbnail(playlist.getTracks().get(0)));
 
-					event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":white_check_mark: **" + audioTrack.getInfo().title + "** successfully added to the queue!").build()).queue();
-					event.getChannel().sendMessage(embed.build()).queue();
+					event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription(":white_check_mark: **" + audioTrack.getInfo().title + "** successfully added to the queue!").build()).queue();
+					event.getChannel().sendMessageEmbeds(embed.build()).queue();
 				} else {
-					event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Song added to queue.").build()).queue();
+					event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Song added to queue.").build()).queue();
 				}
 			}
 
@@ -90,7 +90,7 @@ public class AudioSoundLoadHandler implements AudioLoadResultHandler {
 
 
 		} else  {
-			event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading playlist `" + playlist.getName() + "`").build()).queue();
+			event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Loading playlist `" + playlist.getName() + "`").build()).queue();
 
 			logger.info("Loading Playlist: " + playlist.getName());
 
@@ -104,14 +104,14 @@ public class AudioSoundLoadHandler implements AudioLoadResultHandler {
 	@Override
 	public void noMatches() {
 		logger.info("Could not find song!");
-		event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Could not find song!").build()).queue();
+		event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("Could not find song!").build()).queue();
 	}
 
 	@Override
 	public void loadFailed(FriendlyException exception) {
 		logger.error("An error occurred loading the song!", exception);
 
-		event.getChannel().sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("An error occurred!").build()).queue();
+		event.getChannel().sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("An error occurred!").build()).queue();
 	}
 
 }

@@ -8,6 +8,9 @@ import me.harpylmao.eustaquio.commands.command.objects.CommandEvent;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public class NPCommand implements BaseCommand {
@@ -15,7 +18,7 @@ public class NPCommand implements BaseCommand {
     public void execute(CommandEvent command, TextChannel textChannel, Member member, String[] args, GuildMessageReceivedEvent event) {
         MusicManager musicManager = Bot.getInstance().getGuildAudioManager();
         if (musicManager.getGuildAudio(event.getGuild()).getTrackScheduler().getTrackQueue().size() == 0) {
-            textChannel.sendMessage(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("There are no songs playing.").build()).queue();
+            textChannel.sendMessageEmbeds(new EmbedBuilder().setColor(Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().find(Bot.getInstance().getEustaquioId()).getColorColored()).setDescription("There are no songs playing.").build()).queue();
             return;
         }
         AudioTrack currentPlaying = musicManager.getGuildAudio(event.getGuild()).getTrackScheduler().getTrackQueue().get(0);
@@ -42,7 +45,7 @@ public class NPCommand implements BaseCommand {
                 .setDescription(currentPlaying.getInfo().title)
                 .addField("Position", String.join("", posString), false)
                 .addField("Progress", minPos + ":" + ((secPos < 10) ? "0" + secPos : secPos) + " / " + minDur + ":" + ((secDur < 10) ? "0" + secDur : secDur), false);
-        textChannel.sendMessage(builder.build()).queue();
+        textChannel.sendMessageEmbeds(builder.build()).queue();
     }
 
     @Override

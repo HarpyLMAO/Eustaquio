@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.requests.restaction.AuditableRestAction;
 
 public class UnmuteCommand implements BaseCommand {
@@ -33,7 +34,7 @@ public class UnmuteCommand implements BaseCommand {
                 embedBuilder.setTitle("You're now unmuted " + cachedMember.getUser().getName());
                 embedBuilder.setImage("https://c.tenor.com/sHYApzPFT9MAAAAd/goku-unmuted.gif");
                 command.reply("Successfully operation, member unmuted.");
-                command.getChannel().sendMessage(embedBuilder.build()).queue();
+                command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
             } catch (Exception exception) {
                 exception.printStackTrace();
                 return;

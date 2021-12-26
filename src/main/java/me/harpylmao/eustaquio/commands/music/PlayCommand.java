@@ -8,7 +8,6 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public class PlayCommand implements BaseCommand {
 
-
     @Override
     public void execute(CommandEvent command, TextChannel textChannel, Member author, String[] args, GuildMessageReceivedEvent event) {
         Bot.getInstance().getGuildAudioManager().loadAndPlay(command, args[0], true);

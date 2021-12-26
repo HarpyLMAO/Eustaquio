@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.requests.restaction.AuditableRestAction;
 
 import java.awt.*;
@@ -35,7 +36,7 @@ public class MuteCommand implements BaseCommand {
                             Bot.getInstance().getEustaquioManager().getEustaquioObjectRepository().save(eustaquio);
 
                             for (Category category : command.getGuild().getCategories()) {
-                                category.createPermissionOverride(muted).setDeny(Permission.VOICE_SPEAK, Permission.MESSAGE_WRITE);
+                                category.createPermissionOverride(muted).setDeny(Permission.VOICE_SPEAK, Permission.MESSAGE_WRITE, Permission.MESSAGE_READ);
                             }
                         });
                 
@@ -58,7 +59,7 @@ public class MuteCommand implements BaseCommand {
                         embedBuilder.setTitle("You're now muted. Stfu " + cachedMember.getUser().getName());
                         embedBuilder.setImage("https://c.tenor.com/DosyOk8bRkYAAAAC/mute-discord.gif");
                         command.reply("Successfully operation, member muted.");
-                        command.getChannel().sendMessage(embedBuilder.build()).queue();
+                        command.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
 
                     } catch (Exception exception) {
                         exception.printStackTrace();

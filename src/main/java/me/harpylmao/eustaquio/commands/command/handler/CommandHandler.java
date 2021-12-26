@@ -5,6 +5,7 @@ import me.harpylmao.eustaquio.commands.command.CommandManager;
 import me.harpylmao.eustaquio.commands.command.objects.CommandEvent;
 import me.harpylmao.eustaquio.commands.command.objects.CommandPreConstructor;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 

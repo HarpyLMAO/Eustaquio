@@ -1,6 +1,8 @@
 package me.harpylmao.eustaquio.listeners;
 
 import me.harpylmao.eustaquio.Bot;
+import me.harpylmao.eustaquio.commands.command.interfaces.BaseCommand;
+import me.harpylmao.eustaquio.commands.command.objects.Category;
 import me.harpylmao.eustaquio.managers.Eustaquio;
 import me.harpylmao.eustaquio.managers.EustaquioManager;
 import me.harpylmao.eustaquio.managers.repository.ObjectRepository;
@@ -12,6 +14,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
@@ -19,10 +22,14 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.restaction.AuditableRestAction;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ChatListeners extends ListenerAdapter {
 
@@ -44,10 +51,26 @@ public class ChatListeners extends ListenerAdapter {
     Eustaquio eustaquio = this.eustaquioObjectRepository.find(Bot.getInstance().getEustaquioId());
     Member member = event.getMember();
 
-
     if (!member.getUser().isBot()) {
+      if (event.getMessage().getTextChannel().getName().startsWith("ticket-")) {
+        String[] args = event.getMessage().getTextChannel().getName().split("(?<=-)");
+        if (args[1].replace("-", "").equalsIgnoreCase(member.getUser().getName()) && args[2].equalsIgnoreCase(member.getUser().getDiscriminator())) {
+          File log = new File(member.getUser().getName() + member.getUser().getDiscriminator() + ".txt");
+          try {
+            if (log.exists() == false) {
+              System.out.println("We had to make a new file.");
+              log.createNewFile();
+            }
+            PrintWriter out = new PrintWriter(new FileWriter(log, true));
+            out.append(member.getUser().getName() + ": " + event.getMessage().getContentRaw() + "\n");
+            out.close();
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+
       int numberOfLetters = (int) event.getMessage().getContentRaw().chars().filter(ch -> ch != ' ').count();
-      ;
 
       if (numberOfLetters <= 40) {
         user.setExperience(user.getExperience() + 1);
@@ -80,6 +103,7 @@ public class ChatListeners extends ListenerAdapter {
       }
 
       userObjectRepository.save(user);
+
     }
   }
 
@@ -109,7 +133,7 @@ public class ChatListeners extends ListenerAdapter {
 
         Runnable categoryRunnable = () -> {
           event.getGuild().getCategoryById(eustaquio.getTicketCategoryId())
-                  .createTextChannel("ticket-" + event.getMember().getUser().getName()).queue(textChannel -> {
+                  .createTextChannel("ticket-" + event.getMember().getUser().getName() + "-" + event.getMember().getUser().getDiscriminator()).queue(textChannel -> {
                     for (Member member : event.getGuild().getMembers()) {
                       User user = this.userObjectRepository.find(member.getId());
                       assert user != null;
@@ -140,6 +164,8 @@ public class ChatListeners extends ListenerAdapter {
                       }
                     }
 
+                    new File(event.getMember().getUser().getName() + event.getUser().getDiscriminator() + ".txt");
+
                     textChannel.createPermissionOverride(event.getMember())
                             .setAllow(
                                     Permission.VIEW_CHANNEL,
@@ -152,7 +178,7 @@ public class ChatListeners extends ListenerAdapter {
                                     Permission.MESSAGE_EXT_EMOJI
                             ).queue();
 
-                    textChannel.sendMessage(new EmbedBuilder()
+                    textChannel.sendMessageEmbeds(new EmbedBuilder()
                             .setColor(eustaquio.getColorColored())
                             .setTitle("Ticket Settings ⚙")
                             .setDescription(
@@ -180,7 +206,78 @@ public class ChatListeners extends ListenerAdapter {
           TextChannel textChannel = event.getGuild().getTextChannelById(args[1]);
           assert textChannel != null;
 
-          textChannel.sendMessage("Closing channel in 5 seconds...").queue();
+          File file = new File(event.getUser().getName() + event.getUser().getDiscriminator() + ".txt");
+          if (file.exists()) {
+            TextChannel logsChannel = event.getGuild().getTextChannelById(eustaquio.getTicketLogsChannelId());
+            RestAction<Message> messageRestAction = logsChannel
+                    .sendFile(
+                            file,
+                            event.getMember().getUser().getName() + ".txt"
+                    );
+            messageRestAction.queue();
+            Runnable deleteFile = () -> {
+              file.delete();
+            };
+
+            ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+            service.schedule(deleteFile, 5, TimeUnit.SECONDS);
+            service.shutdown();
+          }
+
+          EmbedBuilder embedBuilder = new EmbedBuilder().setColor(eustaquio.getColorColored()).setDescription("Closing ticket in 5 seconds...");
+
+          textChannel.sendMessageEmbeds(embedBuilder.build()).queue(message -> {
+
+            AtomicInteger task = new AtomicInteger(5);
+
+            Runnable helloRunnable = new Runnable() {
+              @Override
+              public void run() {
+                task.getAndDecrement();
+                if (task.get() == 0) task.set(0);
+                switch (task.get()) {
+                  case 5:
+                    embedBuilder.setDescription("Closing ticket in 5 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  case 4:
+                    embedBuilder.setDescription("Closing ticket in 4 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  case 3:
+                    embedBuilder.setDescription("Closing ticket in 3 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  case 2:
+                    embedBuilder.setDescription("Closing ticket in 2 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  case 1:
+                    embedBuilder.setDescription("Closing ticket in 1 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  case 0:
+                    embedBuilder.setDescription("Closing ticket in 0 seconds...").build();
+                    message.editMessageEmbeds(embedBuilder.build()).queue();
+                    break;
+                  default:
+                    break;
+                }
+              }
+            };
+
+            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+            executor.scheduleWithFixedDelay(helloRunnable, 0, 1, TimeUnit.SECONDS);
+
+            Runnable shutdownRunnable = () -> {
+              executor.shutdown();
+            };
+
+            ScheduledExecutorService shutdownService = Executors.newSingleThreadScheduledExecutor();
+            executor.schedule(shutdownRunnable, 5, TimeUnit.SECONDS);
+            shutdownService.shutdown();
+
+          });
 
           Runnable runnable = () -> {
             textChannel.delete().queue(deletingChannel -> {
@@ -204,6 +301,7 @@ public class ChatListeners extends ListenerAdapter {
           ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
           executor.schedule(runnable, 5, TimeUnit.SECONDS);
           executor.shutdown();
+
         }
       }
     }
