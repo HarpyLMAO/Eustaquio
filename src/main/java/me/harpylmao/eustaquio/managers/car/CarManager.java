@@ -3,6 +3,7 @@ package me.harpylmao.eustaquio.managers.car;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import lombok.Getter;
+import me.harpylmao.eustaquio.Bot;
 import me.harpylmao.eustaquio.managers.repository.MongoRepositoryModel;
 import me.harpylmao.eustaquio.managers.repository.ObjectRepository;
 
@@ -24,5 +25,9 @@ public class CarManager {
                 Car.class
         );
         this.carObjectRepository = new MongoRepositoryModel<>(collection);
+    }
+
+    public void save(Car car) {
+        Bot.getInstance().getCarManager().getCarObjectRepository().save(car);
     }
 }

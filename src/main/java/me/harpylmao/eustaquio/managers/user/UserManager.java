@@ -6,9 +6,6 @@ import lombok.Getter;
 import me.harpylmao.eustaquio.managers.repository.MongoRepositoryModel;
 import me.harpylmao.eustaquio.managers.repository.ObjectRepository;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by HarpyLMAO
  * at 09/10/2021 20:51
@@ -18,7 +15,6 @@ import java.util.Map;
 @Getter
 public class UserManager {
 
-  private final Map<String, User> users = new HashMap<>();
   private final ObjectRepository<User> userObjectRepository;
 
   public UserManager(MongoDatabase mongoDatabase) {

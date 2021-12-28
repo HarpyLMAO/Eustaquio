@@ -35,8 +35,6 @@ public class MemberJoinListener extends ListenerAdapter {
             userObjectRepository.save(user);
         }
 
-        this.userManager.getUsers().put(id, user);
-
         if (eustaquio.getWelcomeChannel() != null && eustaquio.isWelcomeMessages()) {
             EmbedBuilder embedBuilder = new EmbedBuilder();
 

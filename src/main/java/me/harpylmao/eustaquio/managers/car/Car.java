@@ -67,6 +67,8 @@ public class Car implements Model {
 
     @JsonIgnore
     public static Car getCarById(String id) { return cars.stream().filter(car -> car.getId().equalsIgnoreCase(id)).findFirst().orElse(null); }
+    @JsonIgnore
+    public static Car getCarByName(String name) { return cars.stream().filter(car -> car.getName().equalsIgnoreCase(name)).findFirst().orElse(null); }
 
     @Override
     public String getId() {
